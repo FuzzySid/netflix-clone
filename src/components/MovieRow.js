@@ -3,7 +3,7 @@ import axios from '../axios';
 import './MovieRow.css';
 
 const base_url="https://image.tmdb.org/t/p/original/";
-export const MovieRow = ({title,fetchUrl}) => {
+export const MovieRow = ({title,fetchUrl,isLarge}) => {
     const [movies,setMovies]=useState([])
     useEffect(()=>{
         async function fetchData(){
@@ -23,7 +23,7 @@ export const MovieRow = ({title,fetchUrl}) => {
                 {
                     movies.map(movie=>{
                         return(
-                            <img key={movie.id} className="row__poster" src={base_url+movie.poster_path} alt={movie.name}/>
+                            <img key={movie.id} className={`row__poster ${isLarge && "row__posterLarge"}`} src={`${base_url}${isLarge?movie.poster_path: movie.backdrop_path}`} alt={movie.name}/>
                         )
                     })
                 }

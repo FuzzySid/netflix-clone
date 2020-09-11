@@ -3,12 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 import { MovieRow } from './components/MovieRow';
 import requests from './requests';
+import { Banner } from './components/Banner';
 
 function App() {
   return (
-    <div className="App">
-        <h1>Netflix Clone</h1>
-        <MovieRow title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals}/>
+    <div className="app">
+        <Banner/>
+        <MovieRow title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} isLarge/>
         <MovieRow title="Trending Now" fetchUrl={requests.fetchTrending}/>
         <MovieRow title="Top Rated" fetchUrl={requests.fetchTopRated}/>
         <MovieRow title="Action Movies" fetchUrl={requests.fetchActionMovies}/>
