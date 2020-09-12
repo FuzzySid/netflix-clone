@@ -34,6 +34,9 @@ export const Banner = () => {
                     {movie && movie.overview}
                 </h1>
             </div>
+            <div className="banner--fadeBottom">
+
+            </div>
         </header>
     )
 }

@@ -4,10 +4,12 @@ import './App.css';
 import { MovieRow } from './components/MovieRow';
 import requests from './requests';
 import { Banner } from './components/Banner';
+import { Navbar } from './components/Navbar';
 
 function App() {
   return (
     <div className="app">
+        <Navbar/>
         <Banner/>
         <MovieRow title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} isLarge/>
         <MovieRow title="Trending Now" fetchUrl={requests.fetchTrending}/>
