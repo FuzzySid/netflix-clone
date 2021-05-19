@@ -1,4 +1,6 @@
 import React,{useState,useEffect} from 'react'
+import Logo from '../logo.png';
+import AvatarLogo from '../Netflix-avatar.png';
 import './Navbar.css';
 
 export const Navbar = () => {
@@ -18,8 +20,8 @@ export const Navbar = () => {
     }, [])
     return (
         <div className={`nav ${show && "nav__black"}`}>
-            <img className="nav__logo" src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Logo_Netflix.png" alt="Netflix Logo"/>
-            <img className="nav__avatar" src="https://i.pinimg.com/originals/0d/dc/ca/0ddccae723d85a703b798a5e682c23c1.png" alt="Netflix Avatar"/>
+            <img className="nav__logo" src={Logo} alt="Netflix Logo"/>
+            <img className="nav__avatar" src={AvatarLogo} alt="Netflix Avatar"/>
         </div>
     )
 }
