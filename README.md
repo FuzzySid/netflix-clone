@@ -1,68 +1,78 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Netflix Clone
 
-## Available Scripts
+[Fuzzy Netflix Clone](https://fuzzy-netflix-clone.web.app/) is a simple clone of [Netflix's](http://netflix.com/) home page built using ReactJS, Flexbox CSS for layouts and styling and MaterialUI for icons. It's a fully responsive web page and fetches all the details of the shows and movies from [TMDB API](https://developers.themoviedb.org/3). It also has the ability to play trailers for some of the TV Shows and Movies. The project is hosted live on Firebase. 
 
-In the project directory, you can run:
+![Video Demo](https://media.giphy.com/media/gwniBTolRUK8UU9yCu/giphy.gif)
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+This project demonstrates -
 
-### `npm test`
+- Creating reusable components in ReactJS
+- Creating Responsive Layouts using CSS Flexbox
+- Integrating third party APIs using Axios in ReactJS
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1. Stunning UI design picked originally from Netflix's web page. The banner has a fading background effect at the bottom. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Banner](https://ik.imagekit.io/pibjyepn7p9/Netflix_Clone_Screenshot_GjnwypIb-.PNG)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Scrolling sticky navbar animation with thumbnails for movies and TV shows organized by category. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![Sticky Navbar and Movie Thumbnails](https://ik.imagekit.io/pibjyepn7p9/image_3NJbFLYbJ.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Mobile Responsive layout using pure CSS Flexbox.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Mobile Responsive Layout](https://ik.imagekit.io/pibjyepn7p9/Netflix_Clone_Mobile_Responsive_-6aGqFHon.jpeg)
 
-### Code Splitting
+## Setup
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+If you wish to run the project locally, follow the steps below:
 
-### Analyzing the Bundle Size
+Run the following command to clone the repository locally
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```shell
+git clone https://github.com/FuzzySid/netflix-clone.git
+```
 
-### Making a Progressive Web App
+Inside the directory, run
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+```shell
+npm i
+```
 
-### Advanced Configuration
+To install all the dependencies. If you run into any errors while installing packages, run the following command instead
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+```shell
+npm i --legacy-peer-deps
+```
 
-### Deployment
+Then run the following command to open a development server
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+```shell
+npm start
+```
 
-### `npm run build` fails to minify
+To fetch data from the TMDB API, you'll need to get an API key. You can create a `key.js` file inside the root directory with the following
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```javascript
+export const API_KEY=<YOUR_API_KEY>;
+```
+
+For security reasons, `key.js` file is not included in the public repo. 
+
+## Project Structure
+
+![Directory Structure Screenshot](https://ik.imagekit.io/pibjyepn7p9/Netflix_Clone_Folder_Structure_BfIP_mVdD.PNG)
+
+The root directory consists of `App.js` that renders all the external components. `axios.js` fetches data from various API endpoints of TMDB APIs. The various endpoints for fetching movies on the basis of genre or tv shows are inside `requests.js`. 
+
+Other UI components and functional elements are inside the `components` folder. All these components are made reusable using `props`. 
+
